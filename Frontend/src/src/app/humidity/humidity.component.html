@@ -1,0 +1,14 @@
+<div><canvas id="canvas" #canvas></canvas></div>
+
+
+<div class="add-value">
+    <button mat-raised-button (click)="addVal = !addVal">Wert Hinzufügen</button>
+    <mat-form-field *ngIf="addVal">
+        <mat-label>Zugabe von</mat-label>
+        <!-- <mat-select>
+            <mat-option *ngFor="let option of options" [value]="option.viewValue" [(ngModel)]="selected" (click)="checkInput()">{{option.viewValue}}</mat-option>
+        </mat-select> -->
+        <input  class="input" matInput placeholder="Wasser(L)" [(ngModel)]="water" name="water" >
+      
+    </mat-form-field>
+</div>

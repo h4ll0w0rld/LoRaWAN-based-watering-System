@@ -1,0 +1,32 @@
+<div class="body">
+    <h2>Pflanztöpfe</h2>
+    <swiper-container 
+    [effect]="'coverflow'"
+    [grabCursor]="true"
+    [centeredSlides]="true"
+    [slidesPerView]="'auto'"
+    [coverflowEffect]="{
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    }"
+    [pagination]="true" class="swiper">
+    
+        <swiper-slide class="swiper-slide">
+            
+            <app-card></app-card>
+        </swiper-slide>
+        <swiper-slide class="swiper-slide">
+    
+            <app-card></app-card>
+        </swiper-slide>
+        <swiper-slide class="swiper-slide">
+    
+            <app-card></app-card>
+            </swiper-slide>
+    
+    </swiper-container>
+</div>
+

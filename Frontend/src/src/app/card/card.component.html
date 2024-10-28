@@ -1,0 +1,16 @@
+<div class="body"  *ngIf="!this.moreOptions">
+    <h2 (click)="cardClick()">Holunder</h2>
+    <p>Temperatur 24C</p>
+    <p>Bodenfeuchtigkeit {{this.dataService.humidity}}%</p>
+    <div class="image">
+        <img src="../../assets/pot.png" alt="">
+    </div>
+    <br>
+   
+</div>
+
+<div class="body" *ngIf="this.moreOptions" >
+    <h2 (click)="cardClick()">Details</h2>
+    <app-humidity></app-humidity>
+
+</div>

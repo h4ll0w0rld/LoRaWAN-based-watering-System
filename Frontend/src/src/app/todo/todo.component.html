@@ -1,0 +1,33 @@
+<div class="todo">
+  <h2>ToDo`s</h2>
+  <p *ngIf="toDos == null || toDos.length == 0">Aktuell gibt es nichts zu tun</p>
+  <div class="todo-task" *ngFor="let todo of toDos">
+    <h2>{{ todo.headline }}</h2>
+    <p>{{ todo.description }}</p>
+    <button (click)="delTodo(todo.id)">Löschen</button><button>Als erledigt markieren</button>
+    <section class="example-section">
+      <mat-checkbox class="example-margin">Als erledigt markieren</mat-checkbox>
+    </section>
+  </div>
+
+  <button class="add-todo" mat-raised-button (click)="toDoForm()">Neue Todo erstellen</button>
+  <div class="addTodo" *ngIf="addTodoForm">
+    <mat-card-content>
+      <form (ngSubmit)="addToDo()">
+        <mat-form-field>
+          <input class="input" matInput placeholder="Titel" [(ngModel)]="title" name="title" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input class="input" matInput placeholder="Beschreibung" [(ngModel)]="description" name="description"
+            required>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">ToDo Hinzufügen</button>
+      </form>
+    </mat-card-content>
+  </div>
+ 
+
+
+</div>

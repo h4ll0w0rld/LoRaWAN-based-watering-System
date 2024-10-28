@@ -1,0 +1,60 @@
+<div class="auth">
+    <mat-card *ngIf="this.loginForm && !this.authService.isAuthenticated()" class="loginCard">
+        <br>
+        <mat-card-title><h2>Login</h2></mat-card-title>
+        <mat-card-content>
+          <form (ngSubmit)="login()">
+            <mat-form-field>
+              <input class="input" matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+            </mat-form-field>
+            
+            <mat-form-field>
+              <input class="input" matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" type="submit">Login</button>
+            
+          </form>
+          <br>
+          <p (click) ="this.loginForm = false">Ich habe noch kein Acc</p>
+        </mat-card-content>
+        
+      </mat-card>
+    
+      <mat-card *ngIf="!this.loginForm && !this.authService.isAuthenticated()">
+        <br>
+        <mat-card-title><h2>Registrieren</h2></mat-card-title>
+      
+        <mat-card-content>
+          <form (ngSubmit)="register()">
+            <mat-form-field>
+              <input class="input" matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+            </mat-form-field>
+          
+            <mat-form-field>
+              <input class="input" matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+            </mat-form-field>
+         
+          </form>
+         
+          <button mat-raised-button color="primary" type="submit">Register</button>
+        </mat-card-content>
+        <br>
+        <p (click) ="this.loginForm = true">Zum Login</p>
+      </mat-card>
+
+
+
+      <mat-card *ngIf="this.authService.isAuthenticated()">
+        <br>
+        <mat-card-title><h2>Profil verwalten</h2></mat-card-title>
+      
+        <mat-card-content>
+          <button mat-raised-button (click)="logout()">Ausloggen</button>
+        
+       
+        </mat-card-content>
+        
+      </mat-card>
+    
+</div>
